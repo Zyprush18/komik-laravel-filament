@@ -22,7 +22,6 @@ use Filament\Tables\Actions\DeleteAction;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Tables\Filters\TrashedFilter;
 use App\Filament\Resources\KomikResource\Pages;
-
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\KomikResource\RelationManagers;
 
@@ -91,4 +90,6 @@ class KomikResource extends Resource
             'edit' => Pages\EditKomik::route('/{record}/edit'),
         ];
     }
+
+
 }
