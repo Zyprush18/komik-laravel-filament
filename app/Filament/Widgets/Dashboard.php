@@ -18,11 +18,11 @@ class Dashboard extends BaseWidget
             ->description($komik .' increase')
             ->descriptionIcon('heroicon-m-arrow-trending-up')
             ->color('success'),
-            
+
             Stat::make('Total Genre', $genre)
             ->description($genre .' increase')
             ->descriptionIcon('heroicon-m-arrow-trending-up')
-            ->color('success')
+            ->color('success')->chart([7, 2, 10, 3, 15, 4, 17])
         ];
     }
 }
