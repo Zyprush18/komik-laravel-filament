@@ -42,7 +42,7 @@ class KomikResource extends Resource
                         TextInput::make('penerbit')->required(),
                         Select::make('genre_id')->label('genre')->relationship('genre', 'nama_genre')->required(),
                         FileUpload::make('gambar')
-                        ->image()->directory('img/komik'),
+                        ->image()->directory('img/komik')->required(),
                         Textarea::make('deskripsi')->required(),
                     ])
                     ->columns(2),
@@ -58,7 +58,12 @@ class KomikResource extends Resource
                 TextColumn::make('pencipta')->searchable(),
                 TextColumn::make('penerbit')->searchable(),
                 TextColumn::make('genre.nama_genre')->label('Genre')->searchable(),
-                ImageColumn::make('gambar')->searchable(),
+                // ImageColumn::make('gambar')->label('image')
+                // ->getStateUsing( function ($record){
+                //     return asset('storage/' . $record->gambar);
+                // })
+                // ->searchable(),
+                ImageColumn::make('gambar')->label('image')->searchable(),
                 TextColumn::make('deskripsi')->searchable(),
             ])
             ->filters([
