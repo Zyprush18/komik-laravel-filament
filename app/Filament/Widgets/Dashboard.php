@@ -22,7 +22,7 @@ class Dashboard extends BaseWidget
             Stat::make('Total Genre', $genre)
             ->description($genre .' increase')
             ->descriptionIcon('heroicon-m-arrow-trending-up')
-            ->color('success')->chart([7, 2, 10, 3, 15, 4, 17])
+            ->color('success')
         ];
     }
 }
