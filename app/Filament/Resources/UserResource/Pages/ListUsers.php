@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\KomikResource\Pages;
+namespace App\Filament\Resources\UserResource\Pages;
 
-use App\Filament\Resources\KomikResource;
+use App\Filament\Resources\UserResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListKomiks extends ListRecords
+class ListUsers extends ListRecords
 {
-    protected static string $resource = KomikResource::class;
+    protected static string $resource = UserResource::class;
 
     protected function getHeaderActions(): array
     {
@@ -16,5 +16,4 @@ class ListKomiks extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
-    
 }

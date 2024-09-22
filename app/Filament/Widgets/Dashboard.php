@@ -2,6 +2,7 @@
 
 namespace App\Filament\Widgets;
 
+use App\Models\User;
 use App\Models\Genre;
 use App\Models\Komik;
 use Filament\Widgets\StatsOverviewWidget\Stat;
@@ -13,6 +14,7 @@ class Dashboard extends BaseWidget
     {
         $komik = Komik::count();
         $genre = Genre::count();
+        $user = User::count();
         return [
             Stat::make('Total Komik', $komik)
             ->description($komik .' increase')
@@ -22,7 +24,13 @@ class Dashboard extends BaseWidget
             Stat::make('Total Genre', $genre)
             ->description($genre .' increase')
             ->descriptionIcon('heroicon-m-arrow-trending-up')
-            ->color('success')
+            ->color('success'),
+            
+            Stat::make('Total User', $user)
+            ->description($user .' increase')
+            ->descriptionIcon('heroicon-m-arrow-trending-up')
+            ->color('success'),
+            
         ];
     }
 }
